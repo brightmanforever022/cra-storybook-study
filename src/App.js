@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import Counter from "./Counter";
+
+const timeOut = (ms) => new Promise((resolve) => {
+  setTimeout(() => {
+    console.log('time out')
+    resolve();
+  }, ms);
+});
+// class User {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
+
+// function addFunc(adder, ...theArgs) {
+//   return theArgs.map(x => x + adder);
+// }
+// function timeOut() {
+//   setTimeout(() => {
+//     console.log('Timeout')
+//   }, 300);
+// }
+function main() {
+  console.log('start')
+  timeOut(300).then(() => {
+    console.log('finish')
+  });
+  // console.log('start');
+  // logTimeout.then(res => {
+  //   console.log(res)
+  //   console.log('finish');
+  // });
+  // const users = [
+  //   {name: 'a', isActive: true},
+  //   {name: 'b', isActive: false},
+  //   {name: 'c', isActive: true}
+  // ];
+  // const activeUsers = users.map(user => {
+  //   if(user.isActive) {
+  //     return user
+  //   } else {
+  //     return undefined;
+  //   };
+  // }).filter(item => item !== undefined);
+  // console.log('active users: ', activeUsers);
+  
+  // const user = new User('john', 34);
+  // console.log('user:', user);
+
+  // var arr = addFunc(3, 3, 4, 5);
+  // console.log(arr);
+
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Counter />
+  )
 }
 
 export default App;
